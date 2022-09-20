@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tela"></div>
+    <script>
+        var nome = "vitor"
+        var idade = 24
+        var nota = 8
+        var msg = ""
+        msg+= `O aluno ${nome} de ${idade} anos tirou ${nota} em matemática` //substitui o método tradicional de concatenação
+        document.querySelector("#tela").innerHTML=msg
+    </script>
+</body>
+</html>

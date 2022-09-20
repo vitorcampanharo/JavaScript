@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="tela"></div>
+    <div id="tela_2"></div>
     <script>
         var nome = "vitor"
         var idade = 24
@@ -15,6 +16,15 @@
         var msg = ""
         msg+= `O aluno ${nome} de ${idade} anos tirou ${nota} em matemática` //substitui o método tradicional de concatenação
         document.querySelector("#tela").innerHTML=msg
+        
+        var dados = {
+            nome:["vitor", "juju"],
+            idade:[24, 23],
+            nota:[9, 10],
+        }
+        var mostrar = ""
+        mostrar+=`O aluno ${dados.nome[1]} de ${dados.idade[1]} anos tirou ${dados.nota[1]} em matemática`
+        document.querySelector("#tela_2").innerHTML=mostrar
     </script>
 </body>
 </html>

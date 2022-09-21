@@ -8,7 +8,10 @@
 </head>
 <body>
     <script>
-        
+        var nota_1 = parseInt(prompt("Primeira nota"));
+        var nota_2 = parseInt(prompt("Segunda nota"));
+        var media = (nota_1+nota_2)/2>=7 ? "aprovado" : "reprovado";
+        alert(media); // Operador ternário (condição ? expr1(caso seja true) : expr2(caso seja false))
     </script>
 </body>
 </html>

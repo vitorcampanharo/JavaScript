@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        }
+        p{
+            text-align: center;
+            line-height: 200px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="tela" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        <p id="msg">Escrevendo...</p>
+    </div>
+    <script>
+        function clicar() {
+            document.getElementById("msg").innerText="Clicou"
+            document.getElementById("msg").style.backgroundColor="red"
+            document.getElementById("msg").style.color="white"
+        }
+        function entrar() {
+            document.getElementById("msg").innerText="entrando..."
+            document.getElementById("msg").style.backgroundColor="pink"
+            document.getElementById("msg").style.color="black"
+        }
+        function sair() {
+            document.getElementById("msg").innerText="saindo..."
+            document.getElementById("msg").style.backgroundColor="red"
+            document.getElementById("msg").style.color="green"
+        }
+    </script>
+    <!-- Esta é uma "brincadeira" para alterar uma div e seu conteúdo via javascript -->
+</body>
+</html>

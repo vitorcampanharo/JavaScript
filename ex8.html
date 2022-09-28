@@ -52,10 +52,10 @@
         }
         function limpar() {
             document.querySelector("#resultado").innerHTML=null
-            document.querySelector("#n1").value.innerHTML=null
-            document.querySelector("#n2").value.innerHTML=null
+            document.querySelector("#n1").value=""
+            document.querySelector("#n2").value=""
         }
     </script>
-    <!-- O que é escrito dentro das caixas de diálogo sempre são string. é preciso converter para ser número -->
+    <!-- O que é escrito dentro das caixas de diálogo sempre são string. é preciso converter para ser número. document.querySelector("#n2").value="" desta forma estará limpando a caixa input também -->
 </body>
 </html>

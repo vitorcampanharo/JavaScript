@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        html{
+            margin-top: 100px;
+        }
+        main{
+            height: 300px;
+            width: 500px;
+            border-radius: 10px;
+            background-color: aqua;
+            margin: auto;
+            padding: 10px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.329);
+        }
+        main p{
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.5em;
+        }
+        main button{
+            width: 100px;
+            height: 30px;
+            border-style: none;
+            border-radius: 10px;
+        }
+        main input{
+            border-style: none;
+            border-radius: 10px;
+            height: 30px;
+            text-align: center;
+            font-weight: bolder;
+        }
+        #msg{
+            padding-top: 15px;
+        }
+        #img{
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <main id="tela_principal">
+        <p>
+            <label for="hora">Que horas são?</label>
+            <input type="number" name="hora" id="hora">
+            <button onclick="clicar()">Verificar</button>
+        </p>
+        <p id="msg"></p>
+        <p id="img"><img id="foto" src="" alt=""></p>
+    </main>
+    <script>
+        function clicar() {
+            var hora = document.getElementById("hora").value
+            var msg = document.querySelector("#msg")
+            var img = document.querySelector("#foto")
+            if (hora >= 0 && hora <=4) {
+                msg.innerHTML="Boa noite";
+                foto.src="noite.png";
+                document.body.style.backgroundColor = "darkslategrey";
+                document.getElementById("tela_principal").style.backgroundColor="white";
+            }
+            if (hora > 24) {
+                document.querySelector("#msg").innerHTML="Desculpe, mas esse horário não existe em nosso relógio"
+            }
+            if (hora >= 5 && hora <=11) {
+                msg.innerHTML="Bom dia";
+                foto.src="manha.png";
+                document.body.style.backgroundColor = "aqua";
+                document.getElementById("tela_principal").style.backgroundColor="white";
+            } else if (hora >= 12 && hora <=17){
+                msg.innerHTML="Boa tarde";
+                foto.src="tarde.png";
+                document.body.style.backgroundColor = "orange";
+                document.getElementById("tela_principal").style.backgroundColor="white";
+            } else if(hora >=18 && hora <= 24){
+                msg.innerHTML="Boa noite";
+                foto.src="noite.png";
+                document.body.style.backgroundColor = "darkslategrey";
+                document.getElementById("tela_principal").style.backgroundColor="white";
+            }
+        }
+    </script>
+    <!-- Exercício do relógio, foto.src="noite.png" serve para colocar a imágem via javascript. -->
+</body>
+</html>

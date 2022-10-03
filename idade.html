@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-size: 1.1em;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+        body{
+            background-color: aqua;
+            margin: 5px;
+        }
+        header{
+            padding: 10px;
+            text-align: center;
+        }
+        main{
+            background-color: white;
+            padding: 10px;
+            width: 550px;
+            border-radius: 5px;
+            margin: auto;
+        }
+        section{
+            padding: 10px;
+        }
+        section button{
+            background-color: rgb(136, 131, 131);
+            color: white;
+            border-style: hidden;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <main>
+        <section>
+            <label for="nascimento">Ano de nascimento</label>
+            <input type="number" name="nas" id="nascimento" min="1920" max="2022" required>
+        </section>
+        <section>
+            <label for="sexo">Sexo:</label>
+            <input type="radio" name="sexo" id="mas" required checked> Masculino
+            <input type="radio" name="sexo" id="fem" required> Feminino
+        </section>
+        <section id="botao">
+            <input type="button" value="Verificar" onclick="verificar()">
+        </section>
+        <section>
+            <p>Preencha os dados acima para ver o resultado:</p>
+        </section>
+        <section id="msg"></section>
+    </main>
+    <script>
+        function verificar() {
+            var nascimento = Number (document.getElementById("nascimento").value)
+            var date = new Date()
+            var ano = date.getFullYear()
+            var idade = ano - nascimento
+            var mas = document.getElementsByName("sexo")[0]
+            var fem = document.getElementsByName("sexo")[1]
+            if (nascimento == "") {
+                alert("Selecione uma data de nascimento")
+            }
+            if (nascimento > ano) {
+                alert("Ano inexistente")
+            }
+            if (mas.null || fem.null) {
+                alert("Selecione um sexo")
+            }
+            if (nascimento != "") {
+                if (nascimento < ano) {
+                    if (mas.checked) {
+                    document.querySelector("#msg").innerHTML = `É um homem de ${idade} anos`
+                    } else {
+                    document.querySelector("#msg").innerHTML = `É uma mulher de ${idade} anos`
+                    }
+                }
+            }            
+        }
+    </script>
+</body>
+</html>

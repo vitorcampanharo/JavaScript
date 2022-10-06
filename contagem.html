@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;            
+        }
+        body{
+            background-color: rgb(105, 105, 105);
+        }
+        header h1{
+            text-align: center;
+            padding: 10px;
+            font-size: 1.9em;
+        }
+        main{
+            margin: auto;
+            background-color: white;
+            width: 600px;
+            padding: 10px;
+            border-radius: 10px;            
+        }
+        section{
+            padding: 10px;
+            font-size: 1.05em;
+        }
+        .botão{
+            width: 90px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <main>
+        <section>
+            <label for="começo">Primeiro número</label>
+            <input type="number" name="começo" id="começo">
+        </section>
+        <section>
+            <label for="fim">Ultimo número</label>
+            <input type="number" name="fim" id="fim">
+        </section>
+        <section>
+            <label for="passo">Passo</label>
+            <input type="number" name="passo" id="passo">
+        </section>
+        <section>
+            <input type="button" value="Verifcar" onclick="verificar()" class="botão">
+            <input type="button" value="Limpar" onclick="limpar()" class="botão">
+        </section>
+        <section>
+            <p>Preparando a contagem...</p>
+            <div id="msg"></div>
+        </section>
+    </main>
+    <script>
+        function verificar() {
+            var c = Number (document.getElementById("começo").value);
+            var f = Number (document.getElementById("fim").value);
+            var p = Number (document.getElementById("passo").value);
+            var msg = "";
+            if (c == null || f == null || p == null) {
+                document.querySelector("#msg").innerHTML = "Impossivel contar!!"
+            }
+            for(var i = c; i<=f; i+=p){
+                msg+=`${i}`+"<br>"              
+            }
+            document.querySelector("#msg").innerHTML = msg
+            console.log(msg)          
+        }
+        function limpar() {
+            document.querySelector("#msg").innerHTML = null
+            document.getElementById("começo").value = ""
+            document.getElementById("fim").value = ""
+            document.getElementById("passo").value = ""
+        }
+    </script>
+</body>
+</html>

@@ -63,15 +63,21 @@
     </main>
     <script>
         function verificar() {
-            var c = Number (document.getElementById("começo").value);
-            var f = Number (document.getElementById("fim").value);
-            var p = Number (document.getElementById("passo").value);
-            
-            var msg = "";
-            for(var i = c; i<=f; i+=p){
-                msg+=`${i}`+"<br>"            
-            }
-            document.querySelector("#msg").innerHTML = msg   
+            var c = document.getElementById("começo");
+            var f = document.getElementById("fim");
+            var p = document.getElementById("passo");
+            if (c.value.length == 0 || f.value.length == 0 || p.value.length ==0) {
+                alert("Impossível calcular")
+            } else{
+                var cc = Number(c.value)
+                var ff = Number(f.value)
+                var pp = Number(p.value)
+                var msg = ""
+                for(var i = cc; i<=ff; i+=pp){
+                    msg+=`${i}`+"<br>"
+                }  
+                document.querySelector("#msg").innerHTML = msg                   
+            }             
         }
         function limpar() {
             document.querySelector("#msg").innerHTML = null

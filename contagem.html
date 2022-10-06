@@ -66,15 +66,12 @@
             var c = Number (document.getElementById("começo").value);
             var f = Number (document.getElementById("fim").value);
             var p = Number (document.getElementById("passo").value);
+            
             var msg = "";
-            if (c == null || f == null || p == null) {
-                document.querySelector("#msg").innerHTML = "Impossivel contar!!"
-            }
             for(var i = c; i<=f; i+=p){
-                msg+=`${i}`+"<br>"              
+                msg+=`${i}`+"<br>"            
             }
-            document.querySelector("#msg").innerHTML = msg
-            console.log(msg)          
+            document.querySelector("#msg").innerHTML = msg   
         }
         function limpar() {
             document.querySelector("#msg").innerHTML = null

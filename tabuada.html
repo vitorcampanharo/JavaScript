@@ -5,6 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;            
+        }
+        body{
+            background-color: rgb(105, 105, 105);
+        }
+        header h1{
+            text-align: center;
+            padding: 10px;
+            font-size: 1.9em;
+        }
+        main{
+            margin: auto;
+            background-color: white;
+            width: 600px;
+            padding: 10px;
+            border-radius: 10px;            
+        }
+        section{
+            padding: 10px;
+            font-size: 1.05em;
+        }
+        .botão{
+            width: 90px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,5 +50,26 @@
             <div id="msg"></div>
         </section>
     </main>
+    <script>
+        function verificar() {
+            var num = document.getElementById("num");
+            var msg = ""
+            if (num.value.length == 0) {
+                alert("Digite um número para começar")
+            } else{
+                var num_real = Number(num.value)
+                for(var i = 0; i <= 10; i++){
+                msg+=`${num_real} * ${i} = ${num_real*i}` + "<br>"
+                }
+                document.querySelector("#msg").innerHTML = msg
+            }
+            // Para fazer a verificação se o campo do input está preenchido, é necessário fazer desta forma. Pois não adianta usar "if(num == '')" e nem "if(num == null)" pois a verificação não funcionar completamente. É necessário primeiro considerar o número como string, para depois trnasforma´lo em número.
+            
+        }
+        function limpar() {
+            document.querySelector("#msg").innerHTML = null
+            document.getElementById("num").value = ""
+        }
+    </script>
 </body>
 </html>

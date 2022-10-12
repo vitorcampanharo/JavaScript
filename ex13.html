@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tela"></div>
+    <script>
+        var num = [2, 7, 9, 20, 87, 67, 5, 63, 84, 74, 65]
+        var msg = ""
+        for(var pos = 0; pos < num.length; pos++){
+            msg+= `A posição ${pos} é referente ao número ${num[pos]}` + "<br>"
+            document.querySelector("#tela").innerHTML = msg
+
+            /*document.querySelector("#tela").innerHTML = `A posição ${pos} é referente ao número ${num[pos]}`*/
+            
+            //Esta forma não funciona para fazer o DOM. é necessário criar uma variável vazia antes, e depois fazer a concatenação.
+
+            console.log(num[pos])
+        }     
+    </script>
+</body>
+</html>

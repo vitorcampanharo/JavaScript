@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exemplos de função.</h1>
+    <div id="tela"></div>
+    <script>
+        function par_impar(n) { //'n' é o parâmetro. Aqui é chamado de parâmetro formal
+            if (n%2 == 0) { //Aqui é verificado se é par ou impar
+                return "par"; //toda função deve ter um 'return' para retornar o valor desejado
+            } else{
+                return "ímpar";
+            }
+        }
+        var result = par_impar(20); //Aqui é a chamada da função. O número 20 está substituindo o 'n' como parâmetro no começo da função. Aqui é chamado de parâmetro real
+        
+        console.log(result);
+        document.querySelector("#tela").innerHTML = result
+        
+        function soma(n1=0, n2=0) {
+            return n1 + n2
+        }
+        var res = soma(2)
+        console.log(res)
+        //Em regra, se não colocar todos os parâmetros na chamada da função, irá sempre retornar NaN. Para contornar esse erro, basta atribuir 0 nos parâmetros iniciais ao criar a função.
+
+        function fatorial(number) {
+            var fat = 1
+            for(var c = number; c >= 1; c--){
+                fat*=c
+            }
+            return fat
+        }
+        var resultado = fatorial(5) 
+        console.log(resultado)
+        //Para construir um fatorial, é obrigatório criar uma variável de valor 1 no começo. No início do loop for, fat=1 será multiplicado por 5, logo fat irá assumir o valor de 5. E nos próximos decrementos, o 5 será multiplicado pelo próximo decremento e o fat irá assumir o valor dele (que no caso será o valor de 5*4) e assim sucessivamente até chegar acabar o decremento.
+    </script>
+</body>
+</html>

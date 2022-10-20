@@ -8,10 +8,13 @@
 </head>
 <body>
     <div id="tela"></div>
+    <div id="tela2"></div>
     <script>
         var num = [6, 3, 9, 8]
 
-        num.push(2) //Método para adicionar elementos dentro da array
+        var local = num.indexOf(9) // A função "indexOf()" serve para retornar em qual índice está determinado valor dentro de uma Array. Se retornar -1 significa que o valor não existe dentro da array
+
+        num.push(20) //Método para adicionar elementos dentro da array
         
         num[0] = 7 // método para substituir ou adicionar elemetos dentro da arrey especificando o índice. Neste caso está substituindo o índice [0] por 7
 
@@ -21,6 +24,7 @@
         
         console.log(num)
         document.querySelector("#tela").innerHTML = num
+        document.querySelector("#tela2").innerHTML = local
     </script>
 </body>
 </html>

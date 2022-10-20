@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;            
+        }
+        body{
+            background-color: rgb(105, 105, 105);
+        }
+        header h1{
+            text-align: center;
+            padding: 10px;
+            font-size: 1.9em;
+        }
+        main{
+            margin: auto;
+            background-color: white;
+            width: 600px;
+            padding: 10px;
+            border-radius: 10px;            
+        }
+        section{
+            padding: 10px;
+            font-size: 1.05em;
+        }
+        .botão{
+            width: 90px;
+            border-radius: 10px;
+        }
+        select{  
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Analisador de números</h1>
+    </header>
+    <main>
+        <section>
+            <label for="num">Número (entre 1 e 100)</label>
+            <input type="number" name="numero" id="num">
+            <button class="botão" onclick="adicionar()">Adicionar</button>
+        </section>
+        <section>
+            <select name="lista" id="lista" size="6"></select>
+        </section>
+        <section><button class="botão" onclick="calcular()">Calcular</button></section>
+        FALTA COMPRETARRRRRRRRR
+        <section id="result"></section>
+
+    </main>
+    <script>
+        var numero = document.getElementById("num")
+        var lista = document.getElementById("lista")
+        var res = document.querySelector("#result")
+        var valores = []
+        
+        function isNumber(n) {
+            if (Number(n) >= 1 && Number(n) <=100) {
+                return true
+            } else{
+                return false
+            }
+        }
+
+        function inLista(n, l) {
+            if (l.indexOf(Number(n)) != -1) {
+                return true
+            } else {
+                return false
+            }
+        } 
+        function adicionar() {
+            if (isNumber(numero.value) && !inLista(num.value, valores)) {
+                valores.push(Number(numero.value)) //Aqui os valores digitados no input serão adicionados na Array
+                
+                var item = document.createElement("option") //Aqui está sendo criado um novo elemento chamado 'option', é uma tag html dentro de select
+                
+                item.text = `Valor ${numero.value} adicionado`//Aqui o item criado está recebendo o texto
+                
+                lista.appendChild(item) //'appendChild()' inclui elementos filhos dentro de elementos pais. No caso, 'lista' é uma tag select no html, tag pai. E 'item' é a tag option no html, uma tag filho do select.
+            } else {
+                alert("Valor inválido ou já encontrado na lista")
+            }
+            console.log(valores)
+        }
+    </script>
+</body>
+</html>

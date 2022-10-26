@@ -52,7 +52,6 @@
             <select name="lista" id="lista" size="6"></select>
         </section>
         <section><button class="botão" onclick="calcular()">Calcular</button></section>
-        FALTA COMPRETARRRRRRRRR
         <section id="result"></section>
 
     </main>
@@ -86,11 +85,39 @@
                 item.text = `Valor ${numero.value} adicionado`//Aqui o item criado está recebendo o texto
                 
                 lista.appendChild(item) //'appendChild()' inclui elementos filhos dentro de elementos pais. No caso, 'lista' é uma tag select no html, tag pai. E 'item' é a tag option no html, uma tag filho do select.
+                res.innerHTML = null
             } else {
                 alert("Valor inválido ou já encontrado na lista")
             }
             console.log(valores)
+            numero.value = null
+            numero.focus() //Serve para a barra de digitação estar sempre ativa dentro do input
         }
+        function calcular() {
+            if (valores.length === 0) {
+                alert("Adicione valores para calcular")
+            } else {
+                var total = valores.length
+                var maior = valores[0]
+                var menor = valores[0]
+                var soma = 0
+                var media = 0
+                for (var pos=0; pos<=valores[pos]; pos++){
+                    soma+=valores[pos]
+                    if (valores[pos]>maior) {
+                        maior = valores[pos]
+                    } else{
+                        menor = valores[pos]
+                    }
+                }
+                media = soma/total
+                res.innerHTML += ` <p> Tem ${total} números no total <p> `
+                res.innerHTML += ` <p> O maior valor entre eles é ${maior} <p> `
+                res.innerHTML += ` <p> O menor valor entre eles é ${menor} <p> `
+                res.innerHTML += `<p>A soma entre todos eles é ${soma}<p>`
+                res.innerHTML += `<p>A média entre os números é ${media}<p>`
+            }
+        }    
     </script>
 </body>
 </html>

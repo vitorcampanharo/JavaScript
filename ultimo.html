@@ -79,6 +79,7 @@
         function adicionar() {
             if (isNumber(numero.value) && !inLista(num.value, valores)) {
                 valores.push(Number(numero.value)) //Aqui os valores digitados no input serão adicionados na Array
+                console.log(valores)
                 
                 var item = document.createElement("option") //Aqui está sendo criado um novo elemento chamado 'option', é uma tag html dentro de select
                 
